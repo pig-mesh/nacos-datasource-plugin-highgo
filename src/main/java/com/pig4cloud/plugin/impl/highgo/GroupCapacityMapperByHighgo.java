@@ -1,11 +1,11 @@
-package com.pig4cloud.plugin.impl.postgresql;
+package com.pig4cloud.plugin.impl.highgo;
 
 import com.alibaba.nacos.plugin.datasource.constants.TableConstant;
 import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 import com.alibaba.nacos.plugin.datasource.mapper.GroupCapacityMapper;
 import com.pig4cloud.plugin.constants.DataSourceConstant;
 
-public class GroupCapacityMapperByPostgresql extends AbstractMapper implements GroupCapacityMapper {
+public class GroupCapacityMapperByHighgo extends AbstractMapper implements GroupCapacityMapper {
 
 	@Override
 	public String insertIntoSelect() {
@@ -62,7 +62,7 @@ public class GroupCapacityMapperByPostgresql extends AbstractMapper implements G
 
 	@Override
 	public String getDataSource() {
-		return DataSourceConstant.POSTGRESQL;
+		return DataSourceConstant.HIGHGO;
 	}
 
 }

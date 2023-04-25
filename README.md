@@ -7,28 +7,29 @@ Nacos 从 2.2.0 版本开始,可通过 SPI 机制注入多数据源实现插件,
 
 ![](https://minio.pigx.vip/oss/202212/1671180565.png)
 
-## 自定义 PostgreSQL 插件
+## 自定义 highgo 插件
 
-### 1. 添加 postgresql 插件
+### 1. 添加 highgo 插件
 
 > 依赖已上传 maven 中央仓库，请勿使用阿里云代理
 
 ```xml
 <dependency>
 	<groupId>com.pig4cloud.plugin</groupId>
-	<artifactId>nacos-datasource-plugin-pg</artifactId>
+	<artifactId>nacos-datasource-plugin-highgo</artifactId>
 	<version>0.0.1</version>
 </dependency>
 
 <dependency>
-	<groupId>org.postgresql</groupId>
-	<artifactId>postgresql</artifactId>
+    <groupId>com.highgo</groupId>
+    <artifactId>HgdbJdbc</artifactId>
+    <version>6.2.0</version>
 </dependency>
 ```
 
-### 2. 导入 nacos postgresql 数据库脚本
+### 2. 导入 nacos highgo 数据库脚本
 
-./sql/nacos-pg.sql
+./sql/nacos-highgo.sql
 
 ### 3. 配置 nacos 数据源链接信息
 
@@ -36,14 +37,12 @@ Nacos 从 2.2.0 版本开始,可通过 SPI 机制注入多数据源实现插件,
 db:
   num: 1
   url:
-    0: jdbc:postgresql://172.27.0.5:5432/pigxx_config
-  user:
-    0: postgres
-  password:
-    0: 123456
+    0: jdbc:highgo://172.27.0.5:5866/highgo?currentSchema=nacos
+  user: highgo
+  password: Highgo@123
   pool:
     config:
-      driver-class-name: org.postgresql.Driver
+      driver-class-name: com.highgo.jdbc.Driver
 ```
 
 ### 4. 指定 nacos 数据源平台
@@ -51,7 +50,7 @@ db:
 ```yaml
 spring:
   datasource:
-    platform: postgresql
+    platform: highgo
 ```
 ![](https://minio.pigx.vip/oss/202212/1671184577.png)
 

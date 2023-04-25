@@ -1,11 +1,11 @@
-package com.pig4cloud.plugin.impl.postgresql;
+package com.pig4cloud.plugin.impl.highgo;
 
 import com.alibaba.nacos.plugin.datasource.constants.TableConstant;
 import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 import com.alibaba.nacos.plugin.datasource.mapper.TenantCapacityMapper;
 import com.pig4cloud.plugin.constants.DataSourceConstant;
 
-public class TenantCapacityMapperByPostgresql extends AbstractMapper implements TenantCapacityMapper {
+public class TenantCapacityMapperByHighgo extends AbstractMapper implements TenantCapacityMapper {
 
 	@Override
 	public String incrementUsageWithDefaultQuotaLimit() {
@@ -53,7 +53,7 @@ public class TenantCapacityMapperByPostgresql extends AbstractMapper implements 
 
 	@Override
 	public String getDataSource() {
-		return DataSourceConstant.POSTGRESQL;
+		return DataSourceConstant.HIGHGO;
 	}
 
 }

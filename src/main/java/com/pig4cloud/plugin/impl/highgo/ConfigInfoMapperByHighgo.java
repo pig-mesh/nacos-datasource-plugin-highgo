@@ -1,4 +1,4 @@
-package com.pig4cloud.plugin.impl.postgresql;
+package com.pig4cloud.plugin.impl.highgo;
 
 import com.alibaba.nacos.common.utils.CollectionUtils;
 import com.alibaba.nacos.common.utils.StringUtils;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class ConfigInfoMapperByPostgresql extends AbstractMapper implements ConfigInfoMapper {
+public class ConfigInfoMapperByHighgo extends AbstractMapper implements ConfigInfoMapper {
 
 	private static final String DATA_ID = "dataId";
 
@@ -374,7 +374,7 @@ public class ConfigInfoMapperByPostgresql extends AbstractMapper implements Conf
 
 	@Override
 	public String getDataSource() {
-		return DataSourceConstant.POSTGRESQL;
+		return DataSourceConstant.HIGHGO;
 	}
 
 }

@@ -1,11 +1,11 @@
-package com.pig4cloud.plugin.impl.postgresql;
+package com.pig4cloud.plugin.impl.highgo;
 
 import com.alibaba.nacos.plugin.datasource.constants.TableConstant;
 import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 import com.alibaba.nacos.plugin.datasource.mapper.HistoryConfigInfoMapper;
 import com.pig4cloud.plugin.constants.DataSourceConstant;
 
-public class HistoryConfigInfoMapperByPostgresql extends AbstractMapper implements HistoryConfigInfoMapper {
+public class HistoryConfigInfoMapperByHighgo extends AbstractMapper implements HistoryConfigInfoMapper {
 
 	@Override
 	public String removeConfigHistory() {
@@ -41,7 +41,7 @@ public class HistoryConfigInfoMapperByPostgresql extends AbstractMapper implemen
 
 	@Override
 	public String getDataSource() {
-		return DataSourceConstant.POSTGRESQL;
+		return DataSourceConstant.HIGHGO;
 	}
 
 }

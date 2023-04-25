@@ -1,4 +1,4 @@
-package com.pig4cloud.plugin.impl.postgresql;
+package com.pig4cloud.plugin.impl.highgo;
 
 import com.alibaba.nacos.common.utils.StringUtils;
 import com.alibaba.nacos.plugin.datasource.constants.TableConstant;
@@ -8,7 +8,7 @@ import com.pig4cloud.plugin.constants.DataSourceConstant;
 
 import java.util.Map;
 
-public class ConfigTagsRelationMapperByPostgresql extends AbstractMapper implements ConfigTagsRelationMapper {
+public class ConfigTagsRelationMapperByHighgo extends AbstractMapper implements ConfigTagsRelationMapper {
 
 	@Override
 	public String findConfigInfo4PageCountRows(final Map<String, String> params, final int tagSize) {
@@ -147,7 +147,7 @@ public class ConfigTagsRelationMapperByPostgresql extends AbstractMapper impleme
 
 	@Override
 	public String getDataSource() {
-		return DataSourceConstant.POSTGRESQL;
+		return DataSourceConstant.HIGHGO;
 	}
 
 }

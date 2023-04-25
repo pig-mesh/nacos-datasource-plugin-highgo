@@ -1,4 +1,4 @@
-package com.pig4cloud.plugin.impl.postgresql;
+package com.pig4cloud.plugin.impl.highgo;
 
 import com.alibaba.nacos.plugin.datasource.constants.TableConstant;
 import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
@@ -7,7 +7,7 @@ import com.pig4cloud.plugin.constants.DataSourceConstant;
 
 import java.util.List;
 
-public class ConfigInfoAggrMapperByPostgresql extends AbstractMapper implements ConfigInfoAggrMapper {
+public class ConfigInfoAggrMapperByHighgo extends AbstractMapper implements ConfigInfoAggrMapper {
 
 	/**
 	 * 批量删除
@@ -70,7 +70,7 @@ public class ConfigInfoAggrMapperByPostgresql extends AbstractMapper implements 
 
 	@Override
 	public String getDataSource() {
-		return DataSourceConstant.POSTGRESQL;
+		return DataSourceConstant.HIGHGO;
 	}
 
 }
